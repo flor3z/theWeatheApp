@@ -1,0 +1,30 @@
+const toronto = {
+  coord: { lon: -79.4163, lat: 43.7001 },
+  weather: [
+    { id: 803, main: 'Clouds', description: 'broken clouds', icon: '04d' },
+  ],
+  base: 'stations',
+  main: {
+    temp: 298.38,
+    feels_like: 298.06,
+    temp_min: 296.03,
+    temp_max: 299.96,
+    pressure: 1015,
+    humidity: 42,
+  },
+  visibility: 10000,
+  wind: { speed: 2.57, deg: 100 },
+  clouds: { all: 75 },
+  dt: 1660606429,
+  sys: {
+    type: 2,
+    id: 2043365,
+    country: 'CA',
+    sunrise: 1660558935,
+    sunset: 1660609337,
+  },
+  timezone: -14400,
+  id: 6167865,
+  name: 'Toronto',
+  cod: 200,
+};
