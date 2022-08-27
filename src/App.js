@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Container from '@mui/material/Container';
+// import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,16 +19,15 @@ function App() {
         </Toolbar>
       </AppBar>
       <Grid
-        className="content-container"
-        height={'100%'}
-        marginTop={'4rem'}
+        className="upper-container"
+        // marginTop={'4rem'}
         justifyContent="center"
         alignItems="center"
         direction="column"
         container
         // background={Image}
       >
-        <Grid item marginTop="2rem" xs={11} md={8} lg={4} className="upper">
+        <Grid item marginTop="2rem" className="upper">
           <Grid item className="upper__location">
             <p>Toronto</p>
           </Grid>
@@ -41,22 +40,43 @@ function App() {
         </Grid>
         <Grid
           container
-          marginTop="5rem"
+          marginTop="15rem"
           display="flex"
           justifyContent="space-evenly"
           alignItems="center"
-          // xs={11}
-          // md={8}
-          // lg={4}
           className="lower-container"
         >
-          <Grid item className="lower__feelslike">
+          <Grid
+            item
+            className="lower__feelslike"
+            border={'1px solid white'}
+            borderRadius="5px"
+            padding="1rem 2rem"
+            margin={'0.5rem 1rem'}
+            bgcolor="rgba(0,0,0,0.6)"
+          >
             <p>Feels like 34° C</p>
           </Grid>
-          <Grid item className="lower__wind">
+          <Grid
+            item
+            className="lower__wind"
+            border={'1px solid white'}
+            borderRadius="5px"
+            padding="1rem 2rem"
+            margin={'0.5rem 1rem'}
+            bgcolor="rgba(0,0,0,0.6)"
+          >
             <p>18 km/h</p>
           </Grid>
-          <Grid item className="lower__humidity">
+          <Grid
+            item
+            className="lower__humidity"
+            border={'1px solid white'}
+            borderRadius="5px"
+            padding="1rem 2rem"
+            margin={'0.5rem 1rem'}
+            bgcolor="rgba(0,0,0,0.6)"
+          >
             <p>42% Humidity</p>
           </Grid>
         </Grid>

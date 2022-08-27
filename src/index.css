@@ -16,28 +16,29 @@ h1{
   font-size: 6rem;
 }
 
-.content-container::after {
+/* .upper-container::before {
   width: 100%;
   height: 100vh;
   position: relative;
-  /* background-color: rgba(0,0,0,0.4); */
-  color: #fff;
+  background-color: rgba(0,0,0,0.4); 
+  border: 1px solid red;
+  padding: 1rem 0;
+  color: #fff 
+ }     */
 
-}
-
-.content-container {
+.upper-container {
   content: "";
   background: url("./images/background.jpg") no-repeat center center/cover;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100%; 
   top:0;
   left: 0;
   z-index: -1;
 }
 
 .lower-container {
-  background-color: rgba(0,0,0,0.4);
+  /* background-color: rgba(0,0,0,0.4); */
   max-width: 80%;
   padding: 1rem 0;
   border-radius: 5px;
