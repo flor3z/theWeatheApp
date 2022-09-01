@@ -21,6 +21,7 @@ function App() {
         setData(response.data);
         console.log(response.data);
       });
+      setPosition('');
     }
   };
 
@@ -41,7 +42,7 @@ function App() {
             onKeyPress={searchPosition}
             onChange={(event) => setPosition(event.target.value)}
             id="outlined-basic"
-            label="Outlined"
+            label="Enter Location"
             variant="outlined"
           />
         </Toolbar>
@@ -57,13 +58,13 @@ function App() {
       >
         {/* <Grid item marginTop="2rem" className="upper"> */}
         <Grid item className="upper__location">
-          <p>Toronto</p>
+          <p>{data.name}</p>
         </Grid>
         <Grid item className="upper__temp">
-          <h1>30° C</h1>
+          {data.main ? <h1>{Math.floor(data.main.temp - 273.15)}° C</h1> : null}
         </Grid>
         <Grid item className="upper__description">
-          <p>Clear Skies and Sunny</p>
+          {data.weather ? <p>{data.weather[0].main}</p> : null}
         </Grid>
         {/* </Grid> */}
         <Grid
@@ -77,35 +78,28 @@ function App() {
           <Grid
             item
             className="lower__feelslike"
-            border={'1px solid white'}
-            borderRadius="5px"
             padding="1rem 2rem"
             margin={'0.5rem 1rem'}
-            bgcolor="rgba(0,0,0,0.6)"
           >
-            <p>Feels like 34° C</p>
+            {data.main ? (
+              <p>Feels Like {Math.floor(data.main.feels_like - 273.15)}° C</p>
+            ) : null}
           </Grid>
           <Grid
             item
             className="lower__wind"
-            border={'1px solid white'}
-            borderRadius="5px"
             padding="1rem 2rem"
             margin={'0.5rem 1rem'}
-            bgcolor="rgba(0,0,0,0.6)"
           >
-            <p>18 km/h</p>
+            {data.wind ? <p>{Math.floor(data.wind.speed * 3.6)}km/hr</p> : null}
           </Grid>
           <Grid
             item
             className="lower__humidity"
-            border={'1px solid white'}
-            borderRadius="5px"
             padding="1rem 2rem"
             margin={'0.5rem 1rem'}
-            bgcolor="rgba(0,0,0,0.6)"
           >
-            <p>42% Humidity</p>
+            {data.main ? <p>{data.main.humidity}% Humidity</p> : null}
           </Grid>
         </Grid>
       </Grid>
