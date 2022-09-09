@@ -1,24 +1,38 @@
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-
-import './currentWeather.css';
-
 const CurrentWeather = () => {
   return (
-    <Grid item container className="current-weather" margin={'4rem atuo'}>
-      <Grid item container className="top-content">
-        <Grid item>
-          <Typography>Toronto, CA </Typography>
-        </Grid>
-        <Grid item>
-          <Typography> Sunny</Typography>
-        </Grid>
-      </Grid>
-      <Grid item>
-        <Box component="img" alt="Weather" src="icons/01d.png" />
-      </Grid>
-    </Grid>
+    <div className="content">
+      <div className="content-top">
+        <div className="content-top__info">
+          <p className="content-top__info-city">Toronto, CA</p>
+          <p className="content-top__info-description">Sunny</p>
+        </div>
+
+        <div className="content-top__icon-box">
+          <img
+            alt="weather"
+            src="icons/01d.png"
+            className="content-top__icon"
+          />
+        </div>
+      </div>
+      <div className="content-bottom">
+        <p className="content-bottom__temperature">18°C</p>
+        <div className="content-bottom__details">
+          <div className="content-bottom__details-box">
+            <span className="content-bottom__details-label">Feels Like</span>
+            <span className="content-bottom__details-value">16°C</span>
+          </div>
+          <div className="content-bottom__details-box">
+            <span className="content-bottom__details-label">Humidity</span>
+            <span className="content-bottom__details-value">55%</span>
+          </div>
+          <div className="content-bottom__details-box">
+            <span className="content-bottom__details-label">Wind</span>
+            <span className="content-bottom__details-value">12km/h</span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

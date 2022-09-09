@@ -1,11 +1,6 @@
-// import React, { useState } from 'react';
+import './scss/style.scss';
 
 import Search from './components/search/search';
-import Paper from '@mui/material/Paper';
-// import AppBar from '@mui/material/AppBar';
-// import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import CurrentWeather from './components/current-weather/currentWeather';
 
 function App() {
@@ -14,14 +9,14 @@ function App() {
   };
 
   return (
-    <Paper>
-      <Grid container className="container">
-        <Grid item width={'inherit'}>
-          <Search onSearchChange={handleOnSearchChange} />
-        </Grid>
-      </Grid>
-      <CurrentWeather />
-    </Paper>
+    <div className="container">
+      <div className="container__search">
+        <Search onSearchChange={handleOnSearchChange} />
+      </div>
+      <div className="container__weather">
+        <CurrentWeather />
+      </div>
+    </div>
   );
 }
 
