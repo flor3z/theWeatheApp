@@ -6,6 +6,8 @@ const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
 
   const handleChange = (searchData) => {
+    //searchData is the users input selection, which becomes the value for AsyncPaginate and the function passed in (onSearchChange) from App.js has that
+    // info passed into it as well//
     setSearch(searchData);
     onSearchChange(searchData);
   };

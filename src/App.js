@@ -8,17 +8,18 @@ import { useState } from 'react';
 function App() {
   const [curWeather, setCurWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
+  const [units, setUnits] = useState('metric'); //--> contiune here and implement toggle for imperial to metric and back//
 
   const handleOnSearchChange = (searchData) => {
     console.log(searchData);
     const [lat, lon] = searchData.value.split(' ');
 
     const curWeatherFetch = fetch(
-      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`
+      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=${units}`
     );
 
     const forecastFetch = fetch(
-      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`
+      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=${units}`
     );
 
     Promise.all([curWeatherFetch, forecastFetch])
@@ -40,8 +41,11 @@ function App() {
       <div className="container__search">
         <Search onSearchChange={handleOnSearchChange} />
       </div>
+      <div className="container__button">
+        <button className="container__button-units">Metric</button>
+      </div>
       <div className="container__weather">
-        <CurrentWeather />
+        {curWeather && <CurrentWeather data={curWeather} />}
       </div>
     </div>
   );
