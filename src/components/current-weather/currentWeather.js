@@ -1,4 +1,4 @@
-const CurrentWeather = ({ data }) => {
+const CurrentWeather = ({ data, isMetric }) => {
   return (
     <div className="content">
       <div className="content-top">
@@ -19,13 +19,17 @@ const CurrentWeather = ({ data }) => {
       </div>
       <div className="content-bottom">
         <p className="content-bottom__temperature">
-          {Math.round(data.main.temp)}°C
+          {isMetric
+            ? `${Math.round(data.main.temp)}°C`
+            : `${Math.round(data.main.temp)}°F `}
         </p>
         <div className="content-bottom__details">
           <div className="content-bottom__details-box">
             <span className="content-bottom__details-label">Feels Like</span>
             <span className="content-bottom__details-value">
-              {Math.round(data.main.feels_like)}°C
+              {isMetric
+                ? `${Math.round(data.main.feels_like)}°C`
+                : `${Math.round(data.main.feels_like)}°F `}
             </span>
           </div>
           <div className="content-bottom__details-box">
@@ -37,7 +41,9 @@ const CurrentWeather = ({ data }) => {
           <div className="content-bottom__details-box">
             <span className="content-bottom__details-label">Wind</span>
             <span className="content-bottom__details-value">
-              {Math.round(data.wind.speed * 3.6)} km/h
+              {isMetric
+                ? `${Math.round(data.wind.speed * 3.6)} kmh`
+                : `${Math.round(data.wind.speed * 2.237)} mph`}
             </span>
           </div>
         </div>

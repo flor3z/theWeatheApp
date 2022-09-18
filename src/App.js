@@ -8,18 +8,22 @@ import { useState } from 'react';
 function App() {
   const [curWeather, setCurWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
-  const [units, setUnits] = useState('metric'); //--> contiune here and implement toggle for imperial to metric and back//
+  const [isMetric, setIsMetric] = useState(true); //--> contiune here and implement toggle for imperial to metric and back//
 
   const handleOnSearchChange = (searchData) => {
     console.log(searchData);
     const [lat, lon] = searchData.value.split(' ');
 
     const curWeatherFetch = fetch(
-      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=${units}`
+      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=${
+        isMetric ? 'metric' : 'imperial'
+      }`
     );
 
     const forecastFetch = fetch(
-      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=${units}`
+      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=${
+        isMetric ? 'metric' : 'imperial'
+      }`
     );
 
     Promise.all([curWeatherFetch, forecastFetch])
@@ -42,10 +46,15 @@ function App() {
         <Search onSearchChange={handleOnSearchChange} />
       </div>
       <div className="container__button">
-        <button className="container__button-units">Metric</button>
+        <button
+          onClick={() => setIsMetric(!isMetric)}
+          className="container__button-units"
+        >
+          {isMetric ? 'Imperial' : 'Metric'}
+        </button>
       </div>
       <div className="container__weather">
-        {curWeather && <CurrentWeather data={curWeather} />}
+        {curWeather && <CurrentWeather data={curWeather} isMetric={isMetric} />}
       </div>
     </div>
   );
