@@ -3,6 +3,7 @@ import './scss/style.scss';
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
 import Search from './components/search/search';
 import CurrentWeather from './components/current-weather/currentWeather';
+import Forecast from './components/forecast/forecast';
 import { useState } from 'react';
 
 function App() {
@@ -55,6 +56,9 @@ function App() {
       </div>
       <div className="container__weather">
         {curWeather && <CurrentWeather data={curWeather} isMetric={isMetric} />}
+      </div>
+      <div className="container__forecast">
+        {forecast && <Forecast data={forecast} />}
       </div>
     </div>
   );

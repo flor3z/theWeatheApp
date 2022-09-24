@@ -1,6 +1,7 @@
 .container {
   // font-size: 1.5rem;
 
+  margin: 0rem auto 0rem auto;
 
   &__search {
     margin-bottom: 8rem;
@@ -13,7 +14,10 @@
   }
 
   &__button-units {
+    font-family: Verdana, Tahoma, sans-serif;
     cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 500;
     font-size: 1.6rem;
     text-transform: uppercase;
     text-decoration: none;
