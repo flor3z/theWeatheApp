@@ -58,7 +58,7 @@ function App() {
         {curWeather && <CurrentWeather data={curWeather} isMetric={isMetric} />}
       </div>
       <div className="container__forecast">
-        {forecast && <Forecast data={forecast} />}
+        {forecast && <Forecast data={forecast} isMetric={isMetric} />}
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ const CurrentWeather = ({ data, isMetric }) => {
         <p className="content-bottom__temperature">
           {isMetric
             ? `${Math.round(data.main.temp)}°C`
-            : `${Math.round(data.main.temp)}°F `}
+            : `${Math.round(data.main.temp)}°F`}
         </p>
         <div className="content-bottom__details">
           <div className="content-bottom__details-box">

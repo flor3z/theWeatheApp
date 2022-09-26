@@ -15,7 +15,7 @@ const DAYS = [
   'Sunday',
 ];
 
-const Forecast = ({ data }) => {
+const Forecast = ({ data, isMetric }) => {
   //Get the current day in number format//
   const currentDay = new Date().getDay();
   //Select the days after the current day from orinial DAYS array //
@@ -45,6 +45,18 @@ const Forecast = ({ data }) => {
                     />
                     <label className="daily-weather__day">
                       {totalCombinedDays[index]}
+                    </label>
+                    <label className="daily-weather__description">
+                      {item.weather[0].description}
+                    </label>
+                    <label className="daily-weather__min-max">
+                      {isMetric
+                        ? `${Math.round(item.main.temp_min)}°C / ${Math.round(
+                            item.main.temp_max
+                          )}°C`
+                        : `${Math.round(item.main.temp_min)}°F / ${Math.round(
+                            item.main.temp_max
+                          )}°F`}
                     </label>
                   </div>
                 </AccordionItemButton>
