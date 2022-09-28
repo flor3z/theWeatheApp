@@ -1,12 +1,18 @@
 .container {
   // font-size: 1.5rem;
 
-  margin: 0rem auto 0rem auto;
+  margin: 4rem;
+  // margin: 0rem auto 0rem auto;
 
+
+  /////Serach Paginate Section
+  /// 
   &__search {
     margin-bottom: 8rem;
   }
 
+/////Button Section (unit covert)
+///
   &__button {
     display: flex;
     justify-content: center;
@@ -41,9 +47,8 @@
 
   }
 
-  
-
-
+//// Current Weather Section
+/// 
   &__weather {
     box-shadow: 10px 20px 15px -3px rgba(0,0,0,0.1);
     padding: 0 5px 5px 5px;
@@ -54,4 +59,13 @@
     border-radius: 8px;
   }
 
+////Container Forecast Section
+/// 
+  &__forecast {
+    margin: 1rem;
+    color: grey;
+  }
+
 }
+
+

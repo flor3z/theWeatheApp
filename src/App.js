@@ -9,7 +9,7 @@ import { useState } from 'react';
 function App() {
   const [curWeather, setCurWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
-  const [isMetric, setIsMetric] = useState(true); //--> contiune here and implement toggle for imperial to metric and back//
+  const [isMetric, setIsMetric] = useState(true); //--> continue here and implement toggle for imperial to metric and back//
 
   const handleOnSearchChange = (searchData) => {
     console.log(searchData);
