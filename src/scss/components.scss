@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 5px 5px 5px;
 
   &__info-city {
     font-weight: 550;
@@ -27,7 +28,7 @@
   }
 }
 
-///////////
+////////////////////////////
 /// current weather content-bottom
 .content-bottom {
   display: flex;
@@ -36,17 +37,19 @@
 
   &__temperature {
     font-weight: 700;
-    font-size: 4rem;
-    letter-spacing: -2px;
-    margin: 5px 0;
+    font-size: 7rem;
+    letter-spacing: -3px;
+    margin: 1.5rem 0;
     width: auto;
   }
 
   &__details {
-   
-
     width: 20%;
    padding: 10px 15px 10px 15px;
+   @media (max-width: 525px){
+    display: grid;
+    margin-right: .5rem;
+   }
   }
 
   &__details-box{
@@ -66,8 +69,8 @@
   }
 }
 
-///////////
-/// forecast 
+////////////////////////
+/// forecast section
 .title {
   color: black;
   font-size: 2.5rem;
@@ -85,6 +88,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all .2s ease-in-out;
 
   &__icon {
     width: 5.5rem;
@@ -101,4 +105,36 @@
     margin-right: 1.5rem;
   }
 
+}
+
+.daily-weather:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 15px 15px -3px rgb(0 0 0 / 10%);
+}
+////////////////////////
+/// Forecast DETIALS Section
+.daily-details-container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #fbfbf9;
+  padding: .5rem 0rem .5rem 0rem;
+  margin: 0 2rem 0 2rem;
+  border-radius: 1.5rem;
+
+  &__item {
+    display: inline-grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0rem .25rem 0rem .25rem;
+  }
+  &__item label:first-child {
+    color: gray;
+  }
+  &__item label:last-child {
+    color: #28231d;
+    font-weight:500;
+  }
 }

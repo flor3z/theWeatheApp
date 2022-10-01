@@ -16,15 +16,13 @@ function App() {
     const [lat, lon] = searchData.value.split(' ');
 
     const curWeatherFetch = fetch(
-      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=${
-        isMetric ? 'metric' : 'imperial'
-      }`
+      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`
     );
 
+    // &units=${isMetric ? 'metric' : 'imperial' }  removed this to allow for in-line unit coversion using formula from kelvins to °C or °F... only 1 fetch request//
+
     const forecastFetch = fetch(
-      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=${
-        isMetric ? 'metric' : 'imperial'
-      }`
+      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`
     );
 
     Promise.all([curWeatherFetch, forecastFetch])
@@ -51,7 +49,7 @@ function App() {
           onClick={() => setIsMetric(!isMetric)}
           className="container__button-units"
         >
-          {isMetric ? 'Imperial' : 'Metric'}
+          {isMetric ? 'Switch to Imperial' : 'Swtich to Metric'}
         </button>
       </div>
       <div className="container__weather">

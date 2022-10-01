@@ -51,17 +51,52 @@ const Forecast = ({ data, isMetric }) => {
                     </label>
                     <label className="daily-weather__min-max">
                       {isMetric
-                        ? `${Math.round(item.main.temp_min)}°C / ${Math.round(
-                            item.main.temp_max
-                          )}°C`
-                        : `${Math.round(item.main.temp_min)}°F / ${Math.round(
-                            item.main.temp_max
+                        ? `${Math.round(
+                            item.main.temp_min - 273.15
+                          )}°C / ${Math.round(item.main.temp_max - 273.15)}°C`
+                        : `${Math.round(
+                            (item.main.temp_min - 273.15) * 1.8 + 32
+                          )}°F / ${Math.round(
+                            (item.main.temp_max - 273.15) * 1.8 + 32
                           )}°F`}
                     </label>
                   </div>
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel></AccordionItemPanel>
+              <AccordionItemPanel>
+                <div className="daily-details-container">
+                  <div className="daily-details-container__item">
+                    <label>Feels Like</label>
+                    <label>
+                      {isMetric
+                        ? `${Math.round(item.main.feels_like - 273.15)}°C`
+                        : `${Math.round(
+                            (item.main.feels_like - 273.15) * 1.8 + 32
+                          )}°F`}
+                    </label>
+                  </div>
+                  <div className="daily-details-container__item">
+                    <label>Humidity</label>
+                    <label>{item.main.humidity}%</label>
+                  </div>
+                  <div className="daily-details-container__item">
+                    <label>Clouds</label>
+                    <label>{item.clouds.all}%</label>
+                  </div>
+                  <div className="daily-details-container__item">
+                    <label>Wind Speed</label>
+                    <label>
+                      {isMetric
+                        ? ` ${Math.round(item.wind.speed * 3.6)} kmh`
+                        : ` ${Math.round(item.wind.speed * 2.237)} mph`}
+                    </label>
+                  </div>
+                  <div className="daily-details-container__item">
+                    <label>Sea Level</label>
+                    <label>{item.main.sea_level} m</label>
+                  </div>
+                </div>
+              </AccordionItemPanel>
             </AccordionItem>
           )
         )}

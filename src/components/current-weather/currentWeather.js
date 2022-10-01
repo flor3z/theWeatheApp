@@ -20,22 +20,24 @@ const CurrentWeather = ({ data, isMetric }) => {
       <div className="content-bottom">
         <p className="content-bottom__temperature">
           {isMetric
-            ? `${Math.round(data.main.temp)}°C`
-            : `${Math.round(data.main.temp)}°F`}
+            ? `${Math.round(data.main.temp - 273.15)}°C`
+            : `${Math.round((data.main.temp - 273.15) * 1.8 + 32)}°F`}
         </p>
         <div className="content-bottom__details">
           <div className="content-bottom__details-box">
             <span className="content-bottom__details-label">Feels Like</span>
             <span className="content-bottom__details-value">
               {isMetric
-                ? `${Math.round(data.main.feels_like)}°C`
-                : `${Math.round(data.main.feels_like)}°F `}
+                ? `${Math.round(data.main.feels_like - 273.15)}°C`
+                : `${Math.round(
+                    (data.main.feels_like - 273.15) * 1.8 + 32
+                  )}°F `}
             </span>
           </div>
           <div className="content-bottom__details-box">
             <span className="content-bottom__details-label">Humidity</span>
             <span className="content-bottom__details-value">
-              {data.main.humidity} %
+              {data.main.humidity}%
             </span>
           </div>
           <div className="content-bottom__details-box">
