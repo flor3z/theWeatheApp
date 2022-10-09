@@ -1,6 +1,7 @@
 import './scss/style.scss';
 
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
+import OpeningDisplay from './components/opening-display/openingDisplay';
 import Search from './components/search/search';
 import CurrentWeather from './components/current-weather/currentWeather';
 import Forecast from './components/forecast/forecast';
@@ -49,12 +50,22 @@ function App() {
           onClick={() => setIsMetric(!isMetric)}
           className="container__button-units"
         >
-          {isMetric ? 'Switch to Imperial' : 'Swtich to Metric'}
+          {isMetric ? 'Switch to Imperial' : 'Switch to Metric'}
         </button>
       </div>
-      <div className="container__weather">
-        {curWeather && <CurrentWeather data={curWeather} isMetric={isMetric} />}
-      </div>
+      {!curWeather ? (
+        <div className="container__opening-display">
+          {' '}
+          <OpeningDisplay />{' '}
+        </div>
+      ) : (
+        <div className="container__weather">
+          {curWeather && (
+            <CurrentWeather data={curWeather} isMetric={isMetric} />
+          )}
+        </div>
+      )}
+
       <div className="container__forecast">
         {forecast && <Forecast data={forecast} isMetric={isMetric} />}
       </div>
