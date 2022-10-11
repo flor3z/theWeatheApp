@@ -138,3 +138,46 @@
     font-weight:500;
   }
 }
+////////////////////////
+///  Opening Display Section
+.opening {
+
+  &__image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__weather-icon {
+    height: 40rem;
+  }
+
+
+  &__title-container {
+    margin-top: -12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+    &__word-even {
+      padding: .5rem;
+      transition: all .2s ease-in-out;
+      font-size: 6rem;
+      font-family: 'PT Sans Caption', sans-serif;
+    }
+
+    &__word-odd {
+      padding: .5rem;
+      transition: all .2s ease-in-out;
+      font-size: 6rem;
+      font-family: 'Prompt', sans-serif;
+    }
+    &__word-odd:hover {
+      transform: scale(1.1);
+    }
+    &__word-even:hover {
+      transform: scale(1.1);
+    }
+  }
+}
