@@ -1,6 +1,6 @@
 const OpeningDisplay = () => {
   return (
-    <div className="opening">
+    <div className="opening fade-in-bottom">
       <div className="opening__image-container">
         <img
           alt="weather-icon"

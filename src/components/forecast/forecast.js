@@ -37,7 +37,7 @@ const Forecast = ({ data, isMetric }) => {
             <AccordionItem key={index}>
               <AccordionItemHeading>
                 <AccordionItemButton>
-                  <div className="daily-weather">
+                  <div className="daily-weather fade-in">
                     <img
                       alt="weather"
                       className="daily-weather__icon"

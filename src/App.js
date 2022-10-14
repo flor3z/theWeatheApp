@@ -59,7 +59,7 @@ function App() {
           <OpeningDisplay />{' '}
         </div>
       ) : (
-        <div className="container__weather">
+        <div className="container__weather fade-in">
           {curWeather && (
             <CurrentWeather data={curWeather} isMetric={isMetric} />
           )}
