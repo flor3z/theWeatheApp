@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/github.io/theWeatherApp/static/css/main.1e941c3f.css",
+    "main.js": "/github.io/theWeatherApp/static/js/main.b1c3e91d.js",
+    "index.html": "/github.io/theWeatherApp/index.html",
+    "main.1e941c3f.css.map": "/github.io/theWeatherApp/static/css/main.1e941c3f.css.map",
+    "main.b1c3e91d.js.map": "/github.io/theWeatherApp/static/js/main.b1c3e91d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e941c3f.css",
+    "static/js/main.b1c3e91d.js"
+  ]
+}
