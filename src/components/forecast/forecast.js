@@ -27,7 +27,7 @@ const Forecast = ({ data, isMetric }) => {
 
   return (
     <div>
-      <label className="title">Daily</label>
+      <label className="title">7 Days</label>
       <Accordion allowZeroExpanded>
         {data.list.slice(0, 7).map(
           (

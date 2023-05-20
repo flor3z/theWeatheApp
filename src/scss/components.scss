@@ -1,5 +1,4 @@
-///////////
-/// current weather content-top
+/// current weather content-top/////
 
 .content-top {
   display: flex;
@@ -28,8 +27,7 @@
   }
 }
 
-////////////////////////////
-/// current weather content-bottom
+/// current weather content-bottom //////
 .content-bottom {
   display: flex;
   justify-content: space-between;
@@ -49,6 +47,7 @@
    @media (max-width: 525px){
     display: grid;
     margin-right: .5rem;
+    width: 30%;
    }
   }
 
@@ -69,8 +68,8 @@
   }
 }
 
-////////////////////////
-/// forecast section
+
+/// forecast section///
 .title {
   color: black;
   font-size: 2.5rem;
@@ -83,7 +82,7 @@
   font-size: 1.5rem;
   height: 4rem;
   background-color: rgba(255,255,255,0.65);
-  border-radius: 1.5rem;
+  border-radius: 1.25rem;
   margin: .75rem;
   display: flex;
   justify-content: space-between;
@@ -92,34 +91,47 @@
 
   &__icon {
     width: 5.5rem;
+    @media (max-width: 480px){
+      width: 4.0rem;
+    }
   }
   &__day {
     font-weight: 600;
     flex: 1;
     margin-left: 1.5rem;
+    @media (max-width:480px){
+      margin-left: .5rem;
+    }
   }
   &__description {
     font-weight: 600;
     flex: 1;
     text-align: right;
     margin-right: 1.5rem;
+    @media (max-width:480px){
+      margin-right: .5rem;
+    }
+  }
+
+  @media (max-width: 480px){
+    font-size: 1.2rem;
   }
 
 }
 
 .daily-weather:hover {
   transform: scale(1.05);
-  box-shadow: 10px 15px 15px -3px rgb(0 0 0 / 10%);
+  box-shadow: 5px 5px 10px -3px rgb(0 0 0 / 60%);
 }
-////////////////////////
-/// Forecast DETIALS Section
+
+/// Forecast DETIALS Section ///
 .daily-details-container {
   display: flex;
   justify-content: space-evenly;
   background-color: #fbfbf9;
   padding: .5rem 0rem .5rem 0rem;
-  margin: 0 2rem 0 2rem;
-  border-radius: 1.5rem;
+  margin: 0 1rem 0 1rem;
+  border-radius: 0.75rem;
 
   &__item {
     display: inline-grid;
@@ -129,6 +141,9 @@
     font-size: 1.25rem;
     font-weight: 500;
     margin: 0rem .25rem 0rem .25rem;
+    @media(max-width: 480px){
+      font-size: 1.2rem;
+    }
   }
   &__item label:first-child {
     color: gray;
@@ -142,19 +157,20 @@
 ///  Opening Display Section
 .opening {
 
-
-
   &__image-container{
+    
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   &__weather-icon {
+    filter: drop-shadow(2rem 1.5rem rgba(0,0,0,0.5));
+    z-index: -1;
     height: 40rem;
   }
 
-  @media (max-width: 800px){
+  @media (max-width: 780px){
     &__weather-icon {
       height: 25rem;
     }
@@ -166,7 +182,7 @@
     justify-content: center;
     align-items: center;
 
-    @media (max-width: 800px) {
+    @media (max-width: 780px) {
       margin-top: -8rem;
     }
   
@@ -185,12 +201,21 @@
       font-family: 'Prompt', sans-serif;
     }
 
-    @media (max-width: 800px){
+    @media (max-width: 780px){
       &__word-even {
         font-size: 3rem;
       }
       &__word-odd {
         font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 480px){
+      &__word-even {
+        font-size: 2.5rem;
+      }
+      &__word-odd {
+        font-size: 2.5rem;
       }
     }
 
